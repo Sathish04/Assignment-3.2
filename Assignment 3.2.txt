@@ -1,0 +1,30 @@
+Assignment3.2
+
+Problem Statement:
+
+1.Define matrix mymat by replicating the sequence 1:5 for 4 times and transforming into a matrix, sum over rows and columns.
+
+> mymat<-matrix(rep(seq(5), 4), ncol = 5) 
+> mymat
+
+>apply(mymat, 1, sum)
+>apply(mymat, 2, sum)
+
+     [1,][2,] [3,] [4,] [5,]
+[1,]  1   5     4   3    2
+[2,]  2   1     5   4    3
+[3,]  3   2     1   5    4
+[4,]  4   3     2   1    5
+
+[1] 15 15 15 15
+ 
+
+apply() function, instructs R to call a user-specified function on each of the rows or each of the columns of a matrix.
+
+This is the general form of apply for matrices:
+           apply(m,dimcode,f,fargs)
+	where the arguments are as follows:
+1.	m is the matrix.
+2.	dimcode is the dimension, equal to 1 if the function applies to rows or 2 for columns.
+3.	f is the function to be applied.
+4.	fargs is an optional set of arguments to be supplied to f.
